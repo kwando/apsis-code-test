@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Bowling Scorer 9000</title>
+  </head>
+  <body ng-app="bowling">
+    <div class="bowling-app-container">
+      <div ng-controller="MainController">
+        <form ng-submit="addScore()" ng-if="!game.hasEnded">
+          <h1>Round {{main.game.currentRound}}</h1>
+          <input type="number" max="10" min="0" ng-model="first" />
+          <input type="number" max="10" min="0" ng-model="second" />
+          <input type="number" max="10" min="0" ng-model="third" ng-disabled="first + second < 10" ng-if="game.isLastFrame" />
+          <button type="submit">Add Score</button>
+          <div class="error-message">{{error}}</div>
+        </form>
+
+
+        <h1 ng-if="game.hasEnded">Final Score: {{game.currentScore}}</h1>
+        <h1 ng-if="!game.hasEnded">Current Score: {{game.currentScore}}</h1>
+
+        <div class="scoreboard">
+          <div class="scoreboard-frame fade-in" ng-repeat="frame in game.frames track by $index" ng-class="{strike: frame.isStrike, spare: frame.isSpare, ['frame-' + frame.number]: true}">
+            <div class="first">{{frame.throws.first}}</div>
+            <div class="second">{{frame.throws.second}}</div>
+            <div class="third" v-if="frame.third">{{frame.throws.third}}</div>
+          </div>
+        </div>
+
+        <button type="button" ng-click="newGame()">New game</button>
+      </div>
+    </div>
+  <script type="text/javascript" src="/bundle.js"></script></body>
+</html>

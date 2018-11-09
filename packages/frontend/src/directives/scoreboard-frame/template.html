@@ -1,0 +1,5 @@
+<div class="scoreboard-frame" ng-class="{strike: frame.isStrike, spare: frame.isSpare, ['frame-' + frame.number]: true}">
+  <div class="first">{{frame.throws.first}}</div>
+  <div class="second">{{frame.throws.second}}</div>
+  <div class="third" v-if="frame.third">{{frame.throws.third}}</div>
+</div>

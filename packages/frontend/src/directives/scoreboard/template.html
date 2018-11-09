@@ -1,0 +1,6 @@
+<div class="scoreboard">
+  <h1>Current Score: {{game.currentScore}}</h1>
+  <div class="scoreboard">
+    <bw-scoreboard-frame ng-repeat="frame in game.frames track by $index" frame="frame" class="fade-in"></bw-scoreboard-frame>    
+  </div>
+</div>

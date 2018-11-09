@@ -1,0 +1,15 @@
+{
+  "name": "apsis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cd packages/frontend && webpack-dev-server --hot",
+    "start:backend": "cd packages/backend && npm start",
+    "build": "cd packages/frontend && npm run build",
+    "test": "npm run test:backend",
+    "test:backend": "cd packages/backend && npm test"
+  },
+  "author": "",
+  "license": "ISC"
+}

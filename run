@@ -1,0 +1,1 @@
+docker run --rm --publish 4008:4000 bowling:latest 

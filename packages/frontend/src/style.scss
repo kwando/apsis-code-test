@@ -1,0 +1,74 @@
+$primary-color:  rebeccapurple;
+html, body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+input, button{
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: .75rem 1rem;
+  border-radius: .375rem;
+  border: 2px solid rebeccapurple;
+  outline: none;
+}
+input{
+  width: 8rem;
+  border-color: #ccc;
+  &:focus{
+    border-color: $primary-color;
+  }
+  &:disabled{
+    background-color: #eee;
+    border-color: transparent;
+  }
+  &[type=number]{
+    text-align: right;
+  }
+}
+
+button{
+  $background-color: $primary-color;
+  background-color: $background-color;
+  color: #fff;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  &:hover{
+    background-color: darken($background-color, 10%);
+  }
+}
+
+.error-message{
+  color: red;
+  margin-top: 1rem;
+}
+
+.fade-in{
+  &.ng-enter{
+    transition: all 500ms;
+    opacity: 0;
+    transform: scale(0);
+  }
+  &.ng-enter.ng-enter-active{
+    opacity: 1;
+    transform: scale(1);
+  }
+  &.ng-leave{
+    transition: all 500ms;
+    transform: translateX(0);
+  }
+  &.ng-leave-stagger{
+    transition-delay: 50ms;
+    transition-duration: 0s;
+  }
+  &.ng-leave.ng-leave-active{
+    transform: translateX(-100vh);
+    opacity: 0;
+  }
+}
+
+.bowling-app-container{
+  padding: 3rem;
+}

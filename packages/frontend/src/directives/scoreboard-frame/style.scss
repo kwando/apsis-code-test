@@ -1,0 +1,22 @@
+.scoreboard-frame{
+  background-color: lightgray;
+  margin-right: 1rem;
+  display: flex;
+  .first, .second, .third {
+    font-weight: bold;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .second, .third{ background-color: rgba(0,0,0,.12) }
+  .third{ display: none; }
+
+  &.strike { background-color: aquamarine }
+  &.spare { background-color: aqua }
+
+  &.frame-10 .third{ display: flex; }
+}
+
