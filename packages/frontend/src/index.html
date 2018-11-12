@@ -6,10 +6,10 @@
     <div class="bowling-app-container">
       <div ng-controller="MainController">
         <form ng-submit="addScore()" ng-if="!game.hasEnded">
-          <h1>Round {{main.game.currentRound}}</h1>
+          <h1>Round {{game.currentRound}}</h1>
           <input type="number" max="10" min="0" ng-model="first" />
           <input type="number" max="10" min="0" ng-model="second" />
-          <input type="number" max="10" min="0" ng-model="third" ng-disabled="first + second < 10" ng-if="game.isLastFrame" />
+          <input type="number" max="10" min="0" ng-model="third" ng-disabled="first + second < 10" ng-show="game.isLastFrame" />
           <button type="submit">Add Score</button>
           <div class="error-message">{{error}}</div>
         </form>
